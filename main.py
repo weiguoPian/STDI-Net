@@ -153,5 +153,5 @@ def MAE(y_pred, y_true):
 
 if __name__ == '__main__':
     args = p_parse()
-    # trainSTDINet(args)
+    trainSTDINet(args)
     test(args)
