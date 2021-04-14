@@ -5,8 +5,6 @@ def p_parse():
     parser.add_argument(
         "--data_path_NYC", default='./data/bikeNYC.npy', type=str)
     parser.add_argument(
-        "--data_embedding", default='./data/embedding.npy', type=str)
-    parser.add_argument(
         "--data_path_hour_feature", default='./data/hour_glove.npy', type=str)
     parser.add_argument("--seq_len", default=3, type=int)
     parser.add_argument("--batch_size", default=256, type=int)
