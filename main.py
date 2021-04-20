@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 from model.Net import STDI_Net
-
+import random
 
 
 def adjust_learning_rate(optimizer, epoch, lr):
@@ -151,7 +151,16 @@ def RMSE(y_pred, y_true):
 def MAE(y_pred, y_true):
     return np.mean(abs(y_pred - y_true))
 
+def setSeed(seed):
+    random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
 if __name__ == '__main__':
     args = p_parse()
+    setSeed(args.seed)
     trainSTDINet(args)
     test(args)
